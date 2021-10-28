@@ -29,7 +29,7 @@ public class Player {
 
     Input input = view.getInput();
 
-    if (input == Input.Play) { // Bad hidden input både här och rad 16/18 (en/sv) i view
+    if (input == Input.Play) {
       game.newGame();
     } else if (input == Input.Hit) {
       game.hit();
