@@ -89,8 +89,20 @@ public class Dealer extends Player {
    * The player has choosen to take no more cards, it is the dealers turn.
    */
   public boolean stand() {
-    //TODO: implement me
-    return false;
+    if (this.deck != null) {
+      showHand();
+      while(hitRule.doHit(this) == true) {
+        Boolean hit = hitRule.doHit(this);
+        if (hit == true) {
+          Card.Mutable c = deck.getCard();
+          c.show(true);
+          dealCard(c);
+        }
+      }
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }
