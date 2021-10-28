@@ -5,6 +5,10 @@ package view;
  */
 public interface View {
 
+  public enum Input {
+    Play, Hit, Stand, Quit, Error
+  }
+
   /**
    * Shows a welcome message.
    */
@@ -15,7 +19,7 @@ public interface View {
 
    * @return the pressed character.
    */
-  int getInput();
+  Input getInput();
 
   /**
    * Displays a card.

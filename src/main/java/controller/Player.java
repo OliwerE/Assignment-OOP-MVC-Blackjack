@@ -2,6 +2,7 @@ package controller;
 
 import model.Game;
 import view.View;
+import view.View.Input;
 
 
 /**
@@ -26,16 +27,16 @@ public class Player {
       view.displayGameOver(game.isDealerWinner());
     }
 
-    int input = view.getInput();
+    Input input = view.getInput();
 
-    if (input == 'p') {
+    if (input == Input.Play) { // Bad hidden input både här och rad 16/18 (en/sv) i view
       game.newGame();
-    } else if (input == 'h') {
+    } else if (input == Input.Hit) {
       game.hit();
-    } else if (input == 's') {
+    } else if (input == Input.Stand) {
       game.stand();
     }
 
-    return input != 'q';
+    return input != Input.Quit;
   }
 }
