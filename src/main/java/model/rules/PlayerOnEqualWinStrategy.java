@@ -2,7 +2,7 @@ package model.rules;
 
 import model.Player;
 
-public class DealerOnEqualWinStrategy implements WinStrategy {
+public class PlayerOnEqualWinStrategy implements WinStrategy {
 
   /**
    * Checks if the dealer is the winner compared to a player.
@@ -17,7 +17,7 @@ public class DealerOnEqualWinStrategy implements WinStrategy {
     } else if (dealer.calcScore() > maxScore) {
       return false;
     } else if (dealer.calcScore() == player.calcScore()) {
-      return true;
+      return false;
     }
     return dealer.calcScore() > player.calcScore();
   }

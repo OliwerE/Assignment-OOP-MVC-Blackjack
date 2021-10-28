@@ -14,8 +14,13 @@ public class RulesFactory {
     return new Soft17HitStrategy(); // new BasicHitStrategy();
   }
 
-  public WinStrategy WinStrategy() {
-    return new dealerOnEqualWinStrategy();
+  /**
+   * Creates the winner rule used to determine the winner.
+   * 
+   * @return The winner rule to use
+   */
+  public WinStrategy getWinStrategy() {
+    return new PlayerOnEqualWinStrategy();
   }
 
   /**
