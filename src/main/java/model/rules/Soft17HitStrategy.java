@@ -23,5 +23,4 @@ public class Soft17HitStrategy implements HitStrategy {
     }
     return dealer.calcScore() < hitLimit;
   }
-  
 }
