@@ -14,6 +14,10 @@ public class RulesFactory {
     return new Soft17HitStrategy(); // new BasicHitStrategy();
   }
 
+  public WinStrategy WinStrategy() {
+    return new dealerOnEqualWinStrategy();
+  }
+
   /**
    * Crates the rule to use when starting a new game.
 
