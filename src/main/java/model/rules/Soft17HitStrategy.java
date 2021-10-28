@@ -25,15 +25,3 @@ public class Soft17HitStrategy implements HitStrategy {
   }
   
 }
-/*
- * 
- * Iterable<Card> hand = dealer.getHand();
- * 
- * int aceCount = 0; for (Card c: hand) { if (c.getValue() == Card.Value.Ace) {
- * aceCount++; } }
- * 
- * if (aceCount > 0) { // Hantera ace int currentScore = dealer.calcScore();
- * 
- * return false; // ÄNDRA!! } else { return dealer.calcScore() < hitLimit; }
- * 
- */
