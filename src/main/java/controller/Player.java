@@ -2,6 +2,7 @@ package controller;
 
 import model.Game;
 import model.NewCardObserver;
+import view.EnglishView;
 import view.View;
 import view.View.Input;
 
@@ -13,18 +14,29 @@ public class Player implements NewCardObserver {
   private View view;
   private Game game;
 
-  public Player(Game g, View v) {
-    game = g;
-    view = v;
-    game.addNewCardSubscriber(this);
+  /**
+   * Contructs the Player controller.
+   */
+  public Player(View v) {
+    this.game = new Game();
+    this.view = v;
+    this.game.addNewCardSubscriber(this);
   }
 
+  /**
+   * Represents one game round.
+
+   * @return If the game should continue
+   */
   public Boolean runGame() {
-    displayHands();
+    updateView();
     return play();
   }
 
-  private void displayHands() {
+  /**
+   * Updates welcome message and hands in the view.
+   */
+  private void updateView() {
     view.displayWelcomeMessage();
     view.displayDealerHand(game.getDealerHand(), game.getDealerScore());
     view.displayPlayerHand(game.getPlayerHand(), game.getPlayerScore());
@@ -33,8 +45,6 @@ public class Player implements NewCardObserver {
   /**
    * Runs the play use case.
 
-   * @param game The game state.
-   * @param view The view to use.
    * @return True as long as the game should continue.
    */
   public boolean play() {
@@ -57,12 +67,15 @@ public class Player implements NewCardObserver {
     return input != Input.Quit;
   }
 
+  /**
+   * When a dealer or player get a new card.
+   */
   public void newCard() {
-    displayHands();
-    try{
+    updateView();
+    try {
       Thread.sleep(2000);
     } catch (InterruptedException e) {
-      // Handle error
+      view.displayInterruptedException(e);
     }
   }
 }

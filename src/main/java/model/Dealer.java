@@ -1,7 +1,6 @@
 package model;
 
 import java.util.ArrayList;
-
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
 import model.rules.RulesFactory;

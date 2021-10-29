@@ -13,7 +13,7 @@ public class EnglishView implements View {
       System.out.print("\n");
     }
     System.out.println("Hello Black Jack World");
-    System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit");
+    System.out.println("Type 'p' to Play, 'h' to Hit, 's' to Stand or 'q' to Quit\n");
   }
 
   /**
@@ -78,6 +78,14 @@ public class EnglishView implements View {
     } else {
       System.out.println("You Won!");
     }
+  }
 
+  /**
+   * Displays interupted exception.
+
+   * @param e The exception
+   */
+  public void displayInterruptedException(InterruptedException e) {
+    System.out.println(e);
   }
 }

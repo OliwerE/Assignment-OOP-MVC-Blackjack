@@ -14,10 +14,8 @@ public class App {
   * @param args Not used.
   */
   public static void main(String[] args) {
-
-    Game g = new Game();
-    View v = new EnglishView(); // new SwedishView();
-    Player ctrl = new Player(g, v);
+    View v = new EnglishView();
+    Player ctrl = new Player(v);
 
     while (ctrl.runGame()) {
 

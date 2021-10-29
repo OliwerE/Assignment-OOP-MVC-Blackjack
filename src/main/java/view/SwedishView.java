@@ -93,4 +93,13 @@ public class SwedishView implements View {
     System.out.println("Poäng: " + score);
     System.out.println("");
   }
+
+  /**
+   * Displays interupted exception.
+
+   * @param e The exception
+   */
+  public void displayInterruptedException(InterruptedException e) {
+    System.out.println(e);
+  }
 }

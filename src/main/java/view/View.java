@@ -53,4 +53,11 @@ public interface View {
    * @param dealerIsWinner True if the dealer is the winner.
    */
   void displayGameOver(boolean dealerIsWinner);
+
+  /**
+   * Displays interupted exception.
+
+   * @param e The exception
+   */
+  void displayInterruptedException(InterruptedException e);
 }
