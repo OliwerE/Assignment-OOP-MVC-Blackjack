@@ -13,24 +13,16 @@ public class Player implements NewCardObserver {
 
   private View view;
   private Game game;
+  private Boolean isStarting;
 
   /**
    * Contructs the Player controller.
    */
   public Player(View v) {
-    this.game = new Game();
     this.view = v;
+    this.game = new Game();
+    isStarting = true;
     this.game.addNewCardSubscriber(this);
-  }
-
-  /**
-   * Represents one game round.
-
-   * @return If the game should continue
-   */
-  public Boolean runGame() {
-    updateView();
-    return play();
   }
 
   /**
@@ -48,6 +40,11 @@ public class Player implements NewCardObserver {
    * @return True as long as the game should continue.
    */
   public boolean play() {
+    if (isStarting) {
+      updateView();
+      isStarting = false;
+    }
+
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
     }

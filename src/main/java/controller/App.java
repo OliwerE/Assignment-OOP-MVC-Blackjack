@@ -16,7 +16,7 @@ public class App {
     View v = new EnglishView();
     Player ctrl = new Player(v);
 
-    while (ctrl.runGame()) {
+    while (ctrl.play()) {
 
     }
   }
