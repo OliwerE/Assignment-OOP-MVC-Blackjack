@@ -60,14 +60,27 @@ public class Dealer extends Player {
     notifySubscribers();
   }
 
-  public void addSubscriber(NewCardObserver newCardObserver) {
-    subscribers.add(newCardObserver);
+  /**
+   * Add new subscriber to new card observer.
+
+   * @param subscriber The subscriber to add
+   */
+  public void addSubscriber(NewCardObserver subscriber) {
+    subscribers.add(subscriber);
   }
 
-  public void removeSubscriber(NewCardObserver newCardObserver) {
-    subscribers.remove(newCardObserver);
+  /**
+   * remove subscriber from new card observer.
+
+   * @param subscriber The subscriber to remove
+   */
+  public void removeSubscriber(NewCardObserver subscriber) {
+    subscribers.remove(subscriber);
   }
 
+  /**
+   * Notifies all new card subscribers.
+   */
   private void notifySubscribers() {
     for (NewCardObserver newCardObserver : subscribers) {
       newCardObserver.newCard();
@@ -128,5 +141,4 @@ public class Dealer extends Player {
       return false;
     }
   }
-
 }

@@ -97,11 +97,21 @@ public class Game {
     return player.calcScore();
   }
 
-  public void addNewCardSubscriber(NewCardObserver newCardObserver) {
-    dealer.addSubscriber(newCardObserver);
+  /**
+   * Add new subscriber to new card observer.
+
+   * @param subscriber The subscriber to add
+   */
+  public void addNewCardSubscriber(NewCardObserver subscriber) {
+    dealer.addSubscriber(subscriber);
   }
 
-  public void removeNewCardSubscriber(NewCardObserver newCardObserver) {
-    dealer.removeSubscriber(newCardObserver);
+  /**
+   * remove subscriber from new card observer.
+
+   * @param subscriber The subscriber to remove
+   */
+  public void removeNewCardSubscriber(NewCardObserver subscriber) {
+    dealer.removeSubscriber(subscriber);
   }
 }

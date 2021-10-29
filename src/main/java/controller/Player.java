@@ -10,6 +10,7 @@ import view.View.Input;
  * Scenario controller for playing the game.
  */
 public class Player implements NewCardObserver {
+
   private View view;
   private Game game;
 
@@ -47,8 +48,6 @@ public class Player implements NewCardObserver {
    * @return True as long as the game should continue.
    */
   public boolean play() {
-    // view.displayWelcomeMessage();
-
     if (game.isGameOver()) {
       view.displayGameOver(game.isDealerWinner());
     }
