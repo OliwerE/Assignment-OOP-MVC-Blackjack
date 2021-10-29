@@ -4,7 +4,7 @@ This document describes the current design. Note that some dependencies have bee
 ## Class Diagram
 The application uses the model-view-controller (MVC) architectural pattern. The view is passive and gets called from the controller. 
 
-![class diagram](img/class_diagram.jpg)
+![class diagram](img/new-class-diagram.jpeg)
 
 ## Stand - Sequence Diagram
 This is the detailed sequence diagram for the `Game.stand` method. This is what should be implemented.
