@@ -18,7 +18,7 @@ public class Dealer extends Player {
 
   /**
    * Initializing constructor.
-   * 
+
    * @param rulesFactory A factory that creates the rules to use.
    */
   public Dealer(RulesFactory rulesFactory) {
@@ -44,6 +44,12 @@ public class Dealer extends Player {
     return false;
   }
 
+  /**
+   * Gives a card from deck to a player (or dealer).
+
+   * @param p Player who receives the card
+   * @param isShow If the card is visible
+   */
   public void dealPlayerCard(Player p, Boolean isShow) {
     Card.Mutable c = deck.getCard();
     c.show(isShow);
@@ -93,7 +99,7 @@ public class Dealer extends Player {
   public boolean stand() {
     if (this.deck != null) {
       showHand();
-      while(hitRule.doHit(this) == true) {
+      while (hitRule.doHit(this) == true) {
         Boolean hit = hitRule.doHit(this);
         if (hit == true) {
           dealPlayerCard(this, true);

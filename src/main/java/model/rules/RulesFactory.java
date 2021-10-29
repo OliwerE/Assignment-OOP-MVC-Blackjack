@@ -16,7 +16,7 @@ public class RulesFactory {
 
   /**
    * Creates the winner rule used to determine the winner.
-   * 
+
    * @return The winner rule to use
    */
   public WinStrategy getWinStrategy() {

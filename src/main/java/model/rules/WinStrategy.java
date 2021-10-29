@@ -9,7 +9,7 @@ import model.Player;
 public interface WinStrategy {
   /**
    * Checks if the player (dealer) should take more cards.
-   * 
+
    * @param dealer the player to check.
    * @return True if the rule decided the player should take another card.
    */

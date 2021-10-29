@@ -2,11 +2,14 @@ package model.rules;
 
 import model.Player;
 
+/**
+ * Win strategy when dealer win on equal score.
+ */
 public class DealerOnEqualWinStrategy implements WinStrategy {
 
   /**
    * Checks if the dealer is the winner compared to a player.
-   * 
+
    * @param maxScore The highest score.
    * @param dealer The dealer.
    * @param player The player to check against.

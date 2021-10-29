@@ -5,6 +5,9 @@ package view;
  */
 public interface View {
 
+  /**
+   * User input alternatives.
+   */
   public enum Input {
     Play, Hit, Stand, Quit, Error
   }
