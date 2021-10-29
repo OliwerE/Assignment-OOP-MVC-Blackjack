@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 import model.rules.HitStrategy;
 import model.rules.NewGameStrategy;
 import model.rules.RulesFactory;
@@ -15,6 +17,7 @@ public class Dealer extends Player {
   private NewGameStrategy newGameRule;
   private HitStrategy hitRule;
   private WinStrategy winStrategy;
+  private ArrayList<NewCardObserver> subscribers;
 
   /**
    * Initializing constructor.
@@ -26,6 +29,7 @@ public class Dealer extends Player {
     newGameRule = rulesFactory.getNewGameRule();
     hitRule = rulesFactory.getHitRule();
     winStrategy = rulesFactory.getWinStrategy();
+    subscribers = new ArrayList<>();
   }
 
   /**
@@ -54,6 +58,21 @@ public class Dealer extends Player {
     Card.Mutable c = deck.getCard();
     c.show(isShow);
     p.dealCard(c);
+    notifySubscribers();
+  }
+
+  public void addSubscriber(NewCardObserver newCardObserver) {
+    subscribers.add(newCardObserver);
+  }
+
+  public void removeSubscriber(NewCardObserver newCardObserver) {
+    subscribers.remove(newCardObserver);
+  }
+
+  private void notifySubscribers() {
+    for (NewCardObserver newCardObserver : subscribers) {
+      newCardObserver.newCard();
+    }
   }
 
   /**

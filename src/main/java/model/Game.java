@@ -97,4 +97,11 @@ public class Game {
     return player.calcScore();
   }
 
+  public void addNewCardSubscriber(NewCardObserver newCardObserver) {
+    dealer.addSubscriber(newCardObserver);
+  }
+
+  public void removeNewCardSubscriber(NewCardObserver newCardObserver) {
+    dealer.removeSubscriber(newCardObserver);
+  }
 }
