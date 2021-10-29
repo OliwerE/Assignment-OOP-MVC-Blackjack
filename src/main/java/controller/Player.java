@@ -2,7 +2,6 @@ package controller;
 
 import model.Game;
 import model.NewCardObserver;
-import view.EnglishView;
 import view.View;
 import view.View.Input;
 

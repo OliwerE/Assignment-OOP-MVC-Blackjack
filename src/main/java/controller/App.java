@@ -1,6 +1,5 @@
 package controller;
 
-import model.Game;
 import view.EnglishView;
 import view.View;
 
